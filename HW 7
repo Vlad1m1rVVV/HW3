@@ -1,0 +1,31 @@
+1) 
+function myIsNaN (num) {
+    if (typeof num !== "number") {
+        num = Number(num);    }
+
+    return num !== num;
+}
+
+console.log(myIsNaN("Hello")); true 
+console.log(myIsNaN("123"));   false
+console.log(myIsNaN(NaN));     true
+console.log(myIsNaN(123));     false
+
+2)
+function pad(str, char, count, isStart) {
+        if (str.length >= count) {
+        return str;
+    }
+let result = str;
+    while (result.length < count) {
+        if (isStart) {
+            result = char + result;
+        } else {
+            result = result + char;
+        }
+    }
+    return result;
+}
+
+console.log(pad('qwerty', '+', 8, true));  "++qwerty"
+console.log(pad('qwerty', '+', 8, false));  "qwerty++"
